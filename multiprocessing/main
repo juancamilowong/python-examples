@@ -1,0 +1,19 @@
+import multiprocessing
+import time
+import random
+
+def task(nombre):
+    seconds = random.randint(1, 10)
+    print(f"{nombre} started {seconds} seconds")
+    time.sleep(seconds)
+    print(f"{nombre} finished")
+
+if __name__ == "__main__":
+    p1 = multiprocessing.Process(target=task, args=("Ocean",))
+    p2 = multiprocessing.Process(target=task, args=("Mountain",))
+
+    p1.start()
+    p2.start()
+
+    p1.join()
+    p2.join()
