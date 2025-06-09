@@ -1,0 +1,13 @@
+[tool.poetry]
+name = "caching-proxy"
+version = "0.1.0"
+description = "A caching proxy server for HTTP requests"
+
+[tool.poetry.scripts]
+caching-proxy = "caching_proxy:main"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+flask = "^2.3"
+requests = "^2.31"
+cachetools = "^5.3"
